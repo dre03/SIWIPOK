@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://localhost/wisataDepok/';
-$config['base_url'] = 'https://kreasi.nurulfikri.ac.id/andr2111ti/SIWIPOK/';
+$config['base_url'] = 'https://kreasi.nurulfikri.ac.id/andr21111ti/SIWIPOK/';
 
 /*
 |--------------------------------------------------------------------------

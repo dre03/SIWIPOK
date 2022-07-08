@@ -8,7 +8,7 @@ class Home extends CI_Controller{
         $this->load->view('Home/index', $data);
     }
 
-    public function homes(){
+    public function home(){
         $this->load->model('M_wisata','wisata');
 		$data['jenis'] = $this->wisata->get_jenis();
 		$data['kecamatan'] = $this->wisata->get_kec();

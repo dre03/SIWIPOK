@@ -27,12 +27,12 @@ https://vegas.jaysalvat.com/
 Caption Hover Effects
 http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>/assetshome/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>/assetshome/css/animate.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>/assetshome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>/assetshome/css/component.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assetshome/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assetshome/css/animate.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assetshome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assetshome/css/component.css">
 
-  <link rel="stylesheet" href="<?php echo base_url() ?>/assetshome/css/owl.theme.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assetshome/css/owl.theme.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assetshome/css/owl.carousel.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assetshome/css/vegas.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assetshome/css/style1.css">

@@ -20,7 +20,7 @@ class Login extends CI_Controller {
                 $this->session->set_userdata('USERNAME',$row->username);
                 $this->session->set_userdata('ROLE',$row->role);
                 $this->session->set_userdata('USER',$row);
-                redirect(base_url().'Admin');
+                redirect(base_url().'index.php/Admin');
             }else{
                 redirect(base_url().'index.php/login?status=f');
             }
@@ -30,7 +30,7 @@ class Login extends CI_Controller {
                 $this->session->set_userdata('USERNAME',$row->username);
                 $this->session->set_userdata('ROLE',$row->role);
                 $this->session->set_userdata('USER',$row);
-                redirect(base_url().'Home/home');
+                redirect(base_url().'index.php/Home/home');
             }else{
                 redirect(base_url().'index.php/login?status=f');
             }
@@ -40,7 +40,7 @@ class Login extends CI_Controller {
         $this->session->unset_userdata('USERNAME');
         $this->session->unset_userdata('ROLE');
         $this->session->unset_userdata('USER');
-        redirect(base_url().'Home');
+        redirect(base_url().'index.php/Home');
     }
 }
 

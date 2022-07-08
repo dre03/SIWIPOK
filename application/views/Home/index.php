@@ -66,10 +66,10 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="<?php echo base_url('login/index') ?>" class="smoothScroll"><span>Home</span></a></li>
-          <li><a href="<?php echo base_url('login/index') ?>" class="smoothScroll"><span>About</span></a></li>
-          <li><a href="<?php echo base_url('login/index') ?>" class="smoothScroll"><span>Contact</span></a></li>
-          <li><a href="<?php echo base_url('login/index') ?>" class=""><span><i class="fa fa-sign-in" aria-hidden="true"></i> Login</span></a></li>
+          <li><a href="<?php echo base_url('index.php/login/index') ?>" class="smoothScroll"><span>Home</span></a></li>
+          <li><a href="<?php echo base_url('index.php/login/index') ?>" class="smoothScroll"><span>About</span></a></li>
+          <li><a href="<?php echo base_url('index.php/login/index') ?>" class="smoothScroll"><span>Contact</span></a></li>
+          <li><a href="<?php echo base_url('index.php/login/index') ?>" class=""><span><i class="fa fa-sign-in" aria-hidden="true"></i> Login</span></a></li>
         </ul>
       </div>
     </div>

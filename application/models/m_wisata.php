@@ -1,5 +1,5 @@
 <?php
-class m_wisata extends CI_Model{
+class M_wisata extends CI_Model{
     public function get_data(){
         return $this->db->get('tempat_wisata')->result_array();
     }

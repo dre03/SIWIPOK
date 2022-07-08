@@ -1,8 +1,6 @@
 <?php
 class Home extends CI_Controller{
-
     public function index(){
-        
         $this->load->model('m_wisata');
 		$data['jenis'] = $this->m_wisata->get_jenis();
 		$data['kecamatan'] = $this->m_wisata->get_kec();
@@ -29,4 +27,3 @@ class Home extends CI_Controller{
 		$this->load->view('Home/detail', $data);
 	}
 }
-?>

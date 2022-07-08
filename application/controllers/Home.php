@@ -1,6 +1,6 @@
 <?php
 class Home extends CI_Controller{
-    protected function __construct()
+    function __construct()
     {
         $this->load->model('m_wisata','wisata');
     }

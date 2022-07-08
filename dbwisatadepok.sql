@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2022 pada 07.59
+-- Waktu pembuatan: 06 Jul 2022 pada 13.52
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -41,10 +41,7 @@ INSERT INTO `jenis_wisata` (`id`, `nama`) VALUES
 (2, 'Taman Kota'),
 (3, 'Pemancingan'),
 (4, 'Religi'),
-(5, 'Cagar Alam'),
-(6, 'Wisata Alam'),
-(7, 'Maritim atau Bahari'),
-(8, 'Rekreasi');
+(5, 'Cagar Alam');
 
 -- --------------------------------------------------------
 
@@ -102,7 +99,7 @@ INSERT INTO `kelompok` (`id`, `nama`, `status`, `nim`) VALUES
 
 CREATE TABLE `komentar` (
   `id` int(11) NOT NULL,
-  `tanggal` date DEFAULT current_timestamp(),
+  `tanggal` date DEFAULT NULL,
   `isi` text DEFAULT NULL,
   `users_id` int(11) NOT NULL,
   `wisata_id` int(11) NOT NULL,
@@ -115,21 +112,7 @@ CREATE TABLE `komentar` (
 
 INSERT INTO `komentar` (`id`, `tanggal`, `isi`, `users_id`, `wisata_id`, `nilai_rating_id`) VALUES
 (1, '2022-06-12', 'kalo berenang di sini anak2 ngak mau pulang', 2, 1, 4),
-(22, '2022-07-07', 'tempat yang cocok buat liburan', 18, 20, 5),
-(23, '2022-07-07', 'ini tempat bagus banget', 11, 20, 4),
-(24, '2022-07-07', 'recomedasi banget main kesini', 11, 15, 5),
-(27, '2022-07-07', 'Masjidnya sangat bagus sekali, ibdah jadi khusu', 18, 23, 5),
-(33, '2022-07-07', 'Basug banget cocok buat bawa keluarga main kesini', 18, 21, 5),
-(34, '2022-07-07', 'Masjidnya bagus Suasanya Adem banyak fasilitasnya juga pastinya gratis heheh', 19, 23, 5),
-(35, '2022-07-07', 'wiasatanya bagus sangat menarik sekali pokonya recomend  kesini wajib nyoain', 19, 15, 5),
-(36, '2022-07-07', 'Tempatnya Lumayan Adem cocok buat mencari udara segar apa lagibareng pacar heheh', 19, 22, 4),
-(37, '2022-07-07', 'cocok banget kalo bawa keluarga ke sini fasilitasnya banyak dan haraganya cocok cuma 40.000 ribuan', 19, 21, 4),
-(38, '2022-07-07', 'Sangat Bagus cocok buat menghilangkan rasa bosen karena di dalam rumah terus', 11, 27, 5),
-(39, '2022-07-07', 'lumayan bagus cocok buat bawa anak\" ataupun orang dewasa kesini', 11, 21, 4),
-(40, '2022-07-07', 'Masjidnya megah sekali dan fasilitasnya banyak juga', 13, 23, 5),
-(41, '2022-07-07', 'Ahh cocok banget buat Merefresh otak karana pekerjaan mood jadi adem lagi heheh ', 13, 27, 5),
-(43, '2022-07-07', 'lumayan bagus untuk liburan', 22, 15, 3),
-(44, '2022-07-07', 'cocok banget buat liburan kuliah', 22, 20, 4);
+(3, '2022-05-18', 'bsjdv jds xjcsdj c', 2, 15, 2);
 
 -- --------------------------------------------------------
 
@@ -182,12 +165,9 @@ CREATE TABLE `tempat_wisata` (
 --
 
 INSERT INTO `tempat_wisata` (`id`, `nama`, `deskripsi`, `alamat`, `lat`, `long`, `jenis_id`, `skor_rating`, `harga_tiket`, `foto1`, `foto2`, `foto3`, `kecamatan_id`, `website`, `fasilitas`) VALUES
-(15, 'D’Kandang Amzing Farm', 'D\'Kandang Amazing Farm adalah Wisata berkonsep pertanian dan peternakan yang cocok \r\ndikunjungi bersama keluarga, yang diiringi dengan permainan seru dan menantang.', 'Jalan Penarikan (Perum PGRI), RT 07 RW 02, Kelurahan Pasir Putih', '-6.4158763', '106.7823789', 5, 4.5, 20000, 'res1.png', 'res2.png', 'res3.png', 3, 'https://www.tripadvisor.com', 'wahana hewan peternakan, wahana permainan, serta wahana kreasi, \r\nskuter anak, flying fox, naik delm'),
-(20, 'Taman Bunga Wiladatika', 'Deskripsi : Taman Rekreasi Wiladatika merupakan tempat wisata yang berlokasi di Cimanggis, Depok. Disini terdapat Pusat Pendidikan dan Pelatihan Pramuka Nasional (Pusdiklatmas), Balai Pembinaan Pendidikan Pelaksanaan Pedoman Penghayatan dan Pengamalan Pancasila (P4), aula resepsi yang biasa digunakan untuk acara resepsi pernikahan dan halaman hijau yang biasa digunakan para pengunjung untuk piknik bersama keluarga.', 'Jalan Jambore 1 Cibubur, Cimanggis, Depok, Jawa Barat', '-6.3702', '106.8914865', 2, 4.3, 10000, 'tmn_kota1.png', 'tmnkot31.png', 'tmnkota21.png', 8, 'https://travelspromo.com', 'Lahan parkir, toilet, mushola, beragam taman, bangku-bangku untuk istirahat'),
-(21, 'Taman Wisata Pasir Putih', 'Wisata pasir putih ini memiliki tiga kolam water park. Arena \r\nseluncuran menjadi wahana yang paling diminati. Terdapat berbagai ukuran \r\nseluncuran. Ada seluncuran spiral yang cukup tinggi untuk remaja dan dewasa. \r\nAda pula menara seluncuran pendek untuk anak-anak. Selain seluncuran, \r\ntentunya ada wahana lain yang patut dijajal pengunjung. Misalnya ember \r\ntumpah dan air pancur.', 'Jalan Raya Pasir Putih, Sawangan, Depok 16519.', '-6.4331772', '106.7850813', 1, 4.3, 40000, 'kol2.png', 'kolam1.png', 'kol3.png', 3, 'https://waterparkpasirputih.com', 'Lapangan futsal, lapangan futsal, kolam pemancingan, Tempat Karaoke, \r\nPenginapan Bungalow'),
-(22, 'Situ Cilodong', 'Situ Cilodong merupakan salah satu setu, situ atau danau yang \r\nada di Depok dan dijadikan sebagai tempat wisata gratis. Setu ini dapat \r\nmenjadi pilihan ngadem di tengah panas dan juga padatnya kota \r\npenyangga Ibukota ini\r\n', 'Jalan Abdul Ga ni, Kelurahan Kalibaru', '-6.4413390367094365', '106.83875799179077', 7, 4, 0, 'cil1.png', 'cil2.png', 'cil3.png', 7, 'https://www.idntimes.com', 'Fasilitas : Area parkir kendaraan, Toilet, Mushola, Wahana permainan anak,Warung \r\nmakanan dan minum'),
-(23, 'Masjid Kubah Emas', 'Masjid yang disebut sebagai masjid termegah di Asia Tenggara ini selalu ramai dikunjungi, baik untuk ibadah hingga wisata religi. Bukan tanpa alasan Masjid Kubah Emas Depok diklaim sebagai masjid paling megah di ASEAN, pasalnya masjid ini memiliki 5 kubah utama dan 4 kubah kecil yang terbuat dari emas.', 'Jl. Meruyung Raya, Kelurahan Meruyung, Kecamatan Limo, Depok, ', '-6.384096332293091', '106.77196025848389', 4, 4.3, 0, 'mjd1.png', 'mjd3.png', 'mjd2.png', 10, 'https://www.pinhome.id', 'Tempat parkir, Taman, Majalah, Tempat penipian sendal, Tempat \r\nwudhu, Gedung serba guna, Villa 2 da'),
-(27, 'Rumah Keramik F Widayanto', 'Buat Anda yang menyukai seni, tak ada salahnya mengunjungi tempat ini.\r\nWisata keramik yang satu ini memiliki banyak pengunjung yang berbeda usia.\r\nBahkan, tak jarang wisatawan luar negeri juga kerap mengunjungi tempat ini.', 'Jalan Curug Agung Nomor 01, Kelurahan Tanah Baru', '-6.369040937015702', '106.80426478385925', 8, 5, 10000, 'rumah1.jpg', 'Rumah2.jpg', 'rmh3.jpg', 1, 'www.RumahKeramik.com', 'Menariknya lagi, Rumah Keramik F Widayanto juga dilengkapi dengan tempat \r\nmakan yang menghadirkan b');
+(1, 'Water Park  Ceria', 'Destinasi wisata pilihan yang berlokasi di kota Depok ini memang terkenal akan keindahannya.', 'Jl. K.H.M. Usman No.110, Kukusan, Kecamatan Beji, Kota Depok, Jawa Barat 16425', '-6.364450676519081', '106.81186361356124', 1, 4.2, 40000, 'processor_(1).png', 'processor_(1)1.png', 'processor_(1)2.png', 2, 'www.ceriadepok.com', 'tersedia 2 kolam renang, perosotan, arena futsal taman luas'),
+(3, 'AlunAlun Depok', '', 'Jl.Gdc baru', '-6.439153504978133', '106.82693481445312', 2, 4, 100000, '2.png', '21.png', '22.png', 1, 'alun.com', 'Musolah, Lapangan, Tempat Makan'),
+(15, 'Taman Jati muri', '', 'jalan loma sari 2', '-6.392412862343618', '106.82350158691406', 2, NULL, 12000, '3.png', '31.png', '32.png', 10, 'taman jati.com', 'Tempat parkir, tempat makan.dll');
 
 -- --------------------------------------------------------
 
@@ -211,15 +191,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `created_at`, `last_login`, `status`, `role`) VALUES
+(1, 'admin', '15c6d98082895abf1c20c0358aff2a67', 'admin@gmail.com', '2022-06-12 00:18:11', '2022-06-12 00:18:11', 1, 'administrator'),
 (2, 'aminah', '1f32aa4c9a1d2ea010adcf2348166a04', 'aminah@gmail.com', '2022-06-12 00:18:12', '2022-06-12 00:18:12', 1, 'administrator'),
-(11, 'DIka', '202cb962ac59075b964b07152d234b70', 'dika@gmail.com', '2022-07-04 13:34:42', '2022-07-04 13:34:42', 1, 'public'),
-(13, 'Aldi', '827ccb0eea8a706c4c34a16891f84e7b', 'aldi@gmail.com', '2022-07-04 16:05:14', '2022-07-04 16:05:14', 1, 'public'),
-(17, 'Fadel', '81dc9bdb52d04dc20036dbd8313ed055', 'fadel2@gmail.com', '2022-07-07 05:02:07', '2022-07-07 05:02:07', 1, 'administrator'),
-(18, 'lastri', '827ccb0eea8a706c4c34a16891f84e7b', 'las@gmail.com', '2022-07-07 05:55:26', '2022-07-07 05:55:26', 1, 'public'),
-(19, 'Muzaki', '827ccb0eea8a706c4c34a16891f84e7b', 'muz@gmail.com', '2022-07-07 08:25:42', '2022-07-07 08:25:42', 1, 'public'),
-(20, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@gmail.com', '2022-07-07 10:03:56', '2022-07-07 10:03:56', 1, 'administrator'),
-(21, 'Rizki', '827ccb0eea8a706c4c34a16891f84e7b', 'rizki@gmail.com', '2022-07-07 13:04:16', '2022-07-07 13:04:16', 0, NULL),
-(22, 'Ahmad', '827ccb0eea8a706c4c34a16891f84e7b', 'ahmad@gmail.com', '2022-07-07 13:17:48', '2022-07-07 13:17:48', 0, NULL);
+(11, 'www', '202cb962ac59075b964b07152d234b70', 'dika@gmail.com', '2022-07-04 13:34:42', '2022-07-04 13:34:42', 0, 'public'),
+(13, 'urang', '81dc9bdb52d04dc20036dbd8313ed055', 'aldi@gmail.com', '2022-07-04 16:05:14', '2022-07-04 16:05:14', 0, 'administrator');
 
 --
 -- Indexes for dumped tables
@@ -281,7 +256,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `jenis_wisata`
 --
 ALTER TABLE `jenis_wisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `kecamatan`
@@ -299,7 +274,7 @@ ALTER TABLE `kelompok`
 -- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `nilai_rating`
@@ -311,13 +286,13 @@ ALTER TABLE `nilai_rating`
 -- AUTO_INCREMENT untuk tabel `tempat_wisata`
 --
 ALTER TABLE `tempat_wisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

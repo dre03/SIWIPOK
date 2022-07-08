@@ -1,7 +1,10 @@
 <?php
 class Home extends CI_Controller{
-    public function index(){
+    protected function __construct()
+    {
         $this->load->model('m_wisata','wisata');
+    }
+    public function index(){
 		$data['jenis'] = $this->wisata->get_jenis();
 		$data['kecamatan'] = $this->wisata->get_kec();
 		$data['wisata'] = $this->wisata->get_all();
@@ -9,7 +12,6 @@ class Home extends CI_Controller{
     }
 
     public function home(){
-        $this->load->model('m_wisata','wisata');
 		$data['jenis'] = $this->wisata->get_jenis();
 		$data['kecamatan'] = $this->wisata->get_kec();
 		$data['wisata'] = $this->wisata->get_all();
@@ -18,7 +20,6 @@ class Home extends CI_Controller{
     }
     
     public function detail(){
-		$this->load->model('m_wisata','wisata');
         $id = $this->input->get('id');
 		$detail = $this->wisata->detail_data($id);
 		$data['detail'] = $detail;

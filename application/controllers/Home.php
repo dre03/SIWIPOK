@@ -6,10 +6,11 @@ class Home extends CI_Controller{
         $this->load->model('m_wisata','wisata');
     }
     public function index(){
-		$data['jenis'] = $this->wisata->get_jenis();
-		$data['kecamatan'] = $this->wisata->get_kec();
-		$data['wisata'] = $this->wisata->get_all();
-        $this->load->view('Home/index', $data);
+        echo "HAIII";
+		// $data['jenis'] = $this->wisata->get_jenis();
+		// $data['kecamatan'] = $this->wisata->get_kec();
+		// $data['wisata'] = $this->wisata->get_all();
+        // $this->load->view('Home/index', $data);
     }
 
     public function home(){
